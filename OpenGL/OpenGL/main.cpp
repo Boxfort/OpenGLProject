@@ -1,6 +1,7 @@
 #include <iostream>
+#include "display.h"
 
 void main()
 {
-	std::cout << "Hello world!" << std::endl;
+	Display display(800, 600, "Hello World!");
 }
