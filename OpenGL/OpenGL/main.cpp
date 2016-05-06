@@ -1,7 +1,7 @@
-#include <iostream>
 #include "display.h"
 
-void main()
+int main(int argc, char *argv[])
 {
 	Display display(800, 600, "Hello World!");
+	return 0;
 }
