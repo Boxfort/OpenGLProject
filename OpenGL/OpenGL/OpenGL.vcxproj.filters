@@ -33,4 +33,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="res\basicShader.fs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\basicShader.vs">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
 </Project>
