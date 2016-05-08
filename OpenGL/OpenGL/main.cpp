@@ -15,11 +15,13 @@ int main(int argc, char *argv[])
 						  Vertex(glm::vec3(0.0,0.5,0)  , glm::vec2(0.5,1.0)),
 						  Vertex(glm::vec3(0.5,-0.5,0) , glm::vec2(1.0,0))   };
 
-	Mesh mesh(vertices, sizeof(vertices) / sizeof(vertices[0]));
+	unsigned int indices[] = { 0, 1, 2 };
+
+	Mesh mesh(vertices, sizeof(vertices) / sizeof(vertices[0]), indices, sizeof(indices)/sizeof(indices[0]));
 
 	Texture texture("./res/texture.jpg", GL_LINEAR);
 	Transform transform;
-	Camera camera(glm::vec3(0,0,-3), 70.0f, (float)display.GetWidth()/(float)display.GetHeight())
+	Camera camera(glm::vec3(0, 0, -3), 70.0f, (float)(display.GetWidth() / display.GetHeight()), 0.01f, 1000.0f);
 
 	float counter = 0.0f;
 	
@@ -32,12 +34,14 @@ int main(int argc, char *argv[])
 		display.Clear(0.0f, 0.15f, 0.3f, 1.0f);
 
 		transform.GetPos().x = sinf(counter);
+		transform.GetRot().x = counter;
+		transform.GetRot().y = counter;
 		transform.GetRot().z = counter;
-		transform.SetScale(glm::vec3(cosCounter, cosCounter, sinCounter));
+		//transform.SetScale(glm::vec3(cosCounter, cosCounter, sinCounter));
 
 		shader.Bind();
 		texture.Bind(0);
-		shader.Update(transform);
+		shader.Update(transform, camera);
 		mesh.Draw();
 
 		display.Update();
