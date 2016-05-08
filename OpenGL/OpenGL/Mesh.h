@@ -3,14 +3,16 @@
 
 #include "Vertex.h"
 #include "GL/glew.h"
+#include "obj_loader.h"
 
 class Mesh
 {
 public:
-	Mesh(Vertex* vertices, unsigned int numVertices, unsigned int* indices, unsigned int numIndices, std::string name);
+	Mesh(Vertex* vertices, unsigned int numVertices, unsigned int* indices, unsigned int numIndices);
+
 	Mesh(const std::string& fileName);
 
-	void InitMesh(const tinyobj::shape_t shape);
+	void InitMesh(const IndexedModel& model);
 	void Draw();
 
 	virtual ~Mesh();

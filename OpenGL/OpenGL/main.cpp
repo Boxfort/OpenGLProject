@@ -17,7 +17,8 @@ int main(int argc, char *argv[])
 
 	unsigned int indices[] = { 0, 1, 2 };
 
-	Mesh mesh(vertices, sizeof(vertices) / sizeof(vertices[0]), indices, sizeof(indices)/sizeof(indices[0]));
+	//Mesh mesh(vertices, sizeof(vertices) / sizeof(vertices[0]), indices, sizeof(indices)/sizeof(indices[0]));
+	Mesh mesh("./res/models/monkey.obj");
 
 	Texture texture("./res/texture.jpg", GL_LINEAR);
 	Transform transform;
