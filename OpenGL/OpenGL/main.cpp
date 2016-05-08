@@ -4,6 +4,7 @@
 #include "Mesh.h"
 #include <GL/glew.h>
 #include "transform.h"
+#include "Camera.h"
 
 int main(int argc, char *argv[])
 {
