@@ -14,7 +14,7 @@ public:
 	bool IsClosed();
 
 	inline int GetWidth() { return _width; }
-	inline int GetWidth() { return _height; }
+	inline int GetHeight() { return _height; }
 
 	virtual ~Display();
 protected:

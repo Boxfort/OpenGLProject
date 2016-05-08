@@ -19,6 +19,7 @@ int main(int argc, char *argv[])
 
 	Texture texture("./res/texture.jpg", GL_LINEAR);
 	Transform transform;
+	Camera camera(glm::vec3(0,0,-3), 70.0f, (float)display.GetWidth()/(float)display.GetHeight())
 
 	float counter = 0.0f;
 	
