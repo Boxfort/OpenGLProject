@@ -34,10 +34,8 @@ int main(int argc, char *argv[])
 
 		display.Clear(0.0f, 0.15f, 0.3f, 1.0f);
 
-		transform.GetPos().x = sinf(counter);
-		transform.GetRot().x = counter;
+		//transform.GetPos().x = sinf(counter);
 		transform.GetRot().y = counter;
-		transform.GetRot().z = counter;
 		//transform.SetScale(glm::vec3(cosCounter, cosCounter, sinCounter));
 
 		shader.Bind();
