@@ -23,6 +23,7 @@ private:
 		POSITION_VB,
 		TEXCOORD_VB,
 		NORMAL_VB,
+
 		INDEX_VB,
 
 		NUM_BUFFERS
