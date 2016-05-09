@@ -18,12 +18,12 @@ int main(int argc, char *argv[])
 
 	unsigned int indices[] = { 0, 1, 2 };
 
-	Mesh mesh(vertices, sizeof(vertices) / sizeof(vertices[0]), indices, sizeof(indices)/sizeof(indices[0]));
-	//Mesh mesh("./res/models/monkey.obj");
+	//Mesh mesh(vertices, sizeof(vertices) / sizeof(vertices[0]), indices, sizeof(indices)/sizeof(indices[0]));
+	Mesh mesh("./res/models/monkey.obj");
 
-	Texture texture("./res/texture.jpg", GL_NONE);
+	Texture texture("./res/texture1.jpg", GL_NEAREST);
 	Transform transform;
-	Camera camera(glm::vec3(0, 0, -3), 70.0f, (float)(display.GetWidth() / display.GetHeight()), 0.01f, 1000.0f);
+	Camera camera(glm::vec3(0, 0, -4), 70.0f, (float)(display.GetWidth() / display.GetHeight()), 0.01f, 1000.0f);
 
 	float counter = 0.0f;
 	
@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 		float cosCounter = cosf(counter);
 		float sinCounter = sinf(counter);
 
-		display.Clear(0.0f, 0.15f, 0.3f, 1.0f);
+		display.Clear(0.0f, 0.0f, 0.0f, 1.0f);
 
 		//transform.GetPos().x = sinf(counter);
 		transform.GetRot().y = counter;
