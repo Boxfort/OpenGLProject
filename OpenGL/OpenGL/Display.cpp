@@ -2,7 +2,7 @@
 #include <GL/glew.h>
 #include <iostream>
 
-Display::Display(int width, int height, const std::string& title)
+Display::Display(const char* title, int width, int height, bool fullscreen)
 {
 	_width = width;
 	_height = height;
@@ -17,7 +17,7 @@ Display::Display(int width, int height, const std::string& title)
 	SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 16);
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 
-	_window = SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_OPENGL);
+	_window = SDL_CreateWindow(title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_OPENGL);
 	_glContext = SDL_GL_CreateContext(_window);
 
 	GLenum status = glewInit();
@@ -53,6 +53,12 @@ void Display::Update()
 			_isClosed = true;
 		}
 	}
+}
+
+void Display::SetFullscreen(bool value)
+{
+	int mode = (value ? SDL_WINDOW_FULLSCREEN : 0);
+	SDL_SetWindowFullscreen(_window, mode);
 }
 
 bool Display::IsClosed()

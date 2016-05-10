@@ -7,10 +7,11 @@
 class Display
 {
 public:
-	Display(int width, int height, const std::string& title);
+	Display(const char* title, int width, int height, bool fullscreen);
 	
 	void Clear(float r, float g, float b, float a);
 	void Update();
+	void SetFullscreen(bool value);
 	bool IsClosed();
 
 	inline int GetWidth() { return _width; }

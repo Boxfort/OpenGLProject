@@ -12,13 +12,13 @@ int main(int argc, char *argv[])
 	Display display(800, 600, "Hello World!");
 	Shader shader("./res/basicShader");
 
-	Vertex vertices[] = { Vertex(glm::vec3(-0.5,-0.5,0), glm::vec2(0,0), glm::vec3(0,1,0)),
-						  Vertex(glm::vec3(0.0,0.5,0)  , glm::vec2(0.5,1.0), glm::vec3(1,0,0)),
-						  Vertex(glm::vec3(0.5,-0.5,0) , glm::vec2(1.0,0), glm::vec3(-1,0,0))   };
+	//Vertex vertices[] = { Vertex(glm::vec3(-0.5,-0.5,0), glm::vec2(0,0), glm::vec3(0,1,0)),
+	//					  Vertex(glm::vec3(0.0,0.5,0)  , glm::vec2(0.5,1.0), glm::vec3(1,0,0)),
+	//					  Vertex(glm::vec3(0.5,-0.5,0) , glm::vec2(1.0,0), glm::vec3(-1,0,0))   };
 
-	unsigned int indices[] = { 0, 1, 2 };
+	//unsigned int indices[] = { 0, 1, 2 };
 
-	//Mesh mesh(vertices, sizeof(vertices) / sizeof(vertices[0]), indices, sizeof(indices)/sizeof(indices[0]));
+	//Mesh mesh1(vertices, sizeof(vertices) / sizeof(vertices[0]), indices, sizeof(indices)/sizeof(indices[0]));
 	Mesh mesh("./res/models/monkey.obj");
 
 	Texture texture("./res/texture1.jpg", GL_NEAREST);
