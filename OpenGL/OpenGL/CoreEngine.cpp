@@ -17,12 +17,15 @@ void CoreEngine::Stop()
 
 void CoreEngine::Run()
 {
-	while (!_display.)
+	while (!_display.IsClosed())
+	{
+		Render();
+	}
 }
 
 void CoreEngine::Render()
 {
-
+	_display.SwapBuffers();
 }
 
 CoreEngine::~CoreEngine()

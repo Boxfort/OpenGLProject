@@ -8,13 +8,14 @@ public:
 
 	void Start();
 	void Stop();
-	void Run();
-	void Render();
 
 	~CoreEngine();
 protected:
 private:
 	Display _display;
+
+	void Run();
+	void Render();
 };
 
 #endif
