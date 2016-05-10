@@ -42,19 +42,9 @@ void Display::Clear(float r, float g, float b, float a)
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
-void Display::Update()
+void Display::SwapBuffers()
 {
 	SDL_GL_SwapWindow(_window);
-
-	SDL_Event e;
-
-	while (SDL_PollEvent(&e))
-	{
-		if (e.type == SDL_QUIT)
-		{
-			_isClosed = true;
-		}
-	}
 }
 
 bool Display::IsClosed()
