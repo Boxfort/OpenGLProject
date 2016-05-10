@@ -9,7 +9,7 @@
 
 int main(int argc, char *argv[])
 {
-	Display display(800, 600, "Hello World!");
+	Display display("BoxEngine",800,600,false);
 	Shader shader("./res/basicShader");
 
 	//Vertex vertices[] = { Vertex(glm::vec3(-0.5,-0.5,0), glm::vec2(0,0), glm::vec3(0,1,0)),

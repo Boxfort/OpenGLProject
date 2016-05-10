@@ -1,7 +1,6 @@
 #ifndef DISPLAY_H
 #define DISPLAY_H
 
-#include <string>
 #include <SDL2\SDL.h>
 
 class Display
@@ -11,7 +10,6 @@ public:
 	
 	void Clear(float r, float g, float b, float a);
 	void Update();
-	void SetFullscreen(bool value);
 	bool IsClosed();
 
 	inline int GetWidth() { return _width; }
