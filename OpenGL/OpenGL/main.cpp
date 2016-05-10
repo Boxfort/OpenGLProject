@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 
 	Texture texture("./res/texture1.jpg", GL_NEAREST);
 	Transform transform;
-	Camera camera(glm::vec3(0, 0, -4), 70.0f, (float)(display.GetWidth() / display.GetHeight()), 0.01f, 1000.0f);
+	Camera camera(glm::vec3(0, 0, -4), 70.0f, display.GetAspect(), 0.01f, 1000.0f);
 
 	float counter = 0.0f;
 	

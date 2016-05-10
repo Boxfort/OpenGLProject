@@ -14,6 +14,7 @@ public:
 
 	inline int GetWidth() { return _width; }
 	inline int GetHeight() { return _height; }
+	inline float GetAspect() { return ((float)_width / (float)_height); }
 
 	virtual ~Display();
 protected:
