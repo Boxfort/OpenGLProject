@@ -6,8 +6,9 @@
 class Display
 {
 public:
-	Display(const char* title, int width, int height, bool fullscreen);
+	Display() {};
 	
+	void Create(const char* title, int width, int height, bool fullscreen);
 	void Clear(float r, float g, float b, float a);
 	void SwapBuffers();
 	bool IsClosed();
