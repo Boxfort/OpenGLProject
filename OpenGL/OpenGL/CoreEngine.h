@@ -24,6 +24,7 @@ private:
 	int _frameRate;
 	double _frameTime;
 	Display _display;
+	Game _game;
 	
 	void Run();
 	void Render();

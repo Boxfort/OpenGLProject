@@ -65,6 +65,8 @@ void CoreEngine::Run()
 				Stop();
 			}
 			//TODO: Update Game
+			_game.Input();
+			_game.Update();
 
 			if (frameCounter >= Time::SECOND)
 			{
@@ -74,6 +76,7 @@ void CoreEngine::Run()
 		}
 		if (render)
 		{
+			_game.Render();
 			Render();
 		}
 		else
