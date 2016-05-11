@@ -366,14 +366,6 @@ public:
 	~Input();
 protected:
 private:
-	const static int NUM_KEYS;
-	const static int NUM_MOUSEBUTTONS;
-
-	static SDL_Event e;
-
-	static bool _inputs[];
-	static bool _downKeys[];
-	static bool _upKeys[];
 };
 
 #endif
