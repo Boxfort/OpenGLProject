@@ -61,7 +61,7 @@ void CoreEngine::Run()
 			render = true;
 			unprocessedTime -= _frameTime;
 
-			if (_display.IsClosed())
+			if (_display.IsCloseRequested())
 			{
 				Stop();
 			}
@@ -91,7 +91,7 @@ void CoreEngine::Run()
 
 void CoreEngine::Render()
 {
-	_display.SwapBuffers();
+	_display.Render();
 }
 
 CoreEngine::~CoreEngine()

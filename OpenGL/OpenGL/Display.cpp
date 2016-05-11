@@ -1,13 +1,16 @@
 #include "Display.h"
+#include "sdl_backend.h"
+#include <SDL2/SDL.h>
 #include <GL/glew.h>
 #include <iostream>
 
+int Display::_width = 0;
+int Display::_height = 0;
+
  void Display::Create(const char* title, int width, int height, bool fullscreen)
 {
-	_width = width;
-	_height = height;
-
-	int mode = (fullscreen ? SDL_WINDOW_FULLSCREEN : 0);
+	Display::_width = width;
+	Display::_height = height;
 
 	SDL_Init(SDL_INIT_EVERYTHING);
 
@@ -19,42 +22,27 @@
 	SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 16);
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 
-	_window = SDL_CreateWindow(title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_OPENGL | mode);
-	_glContext = SDL_GL_CreateContext(_window);
+	SDLCreateWindow(title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, fullscreen);
 
 	GLenum status = glewInit();
 	if (status != GLEW_OK)
 	{
 		std::cerr << "Glew failed to initialize" << std::endl;
 	}
-
-	_isClosed = false;
-
-	glEnable(GL_DEPTH_TEST);
-
-	glEnable(GL_CULL_FACE);
-	glCullFace(GL_BACK);
 }
 
-void Display::Clear(float r, float g, float b, float a)
+void Display::Render()
 {
-	glClearColor(0.0f, 0.15f, 0.3f, 1.0f);
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	SDLSwapBuffers();
 }
 
-void Display::SwapBuffers()
+void Display::Dispose()
 {
-	SDL_GL_SwapWindow(_window);
-}
-
-bool Display::IsClosed()
-{
-	return _isClosed;
-}
-
-Display::~Display()
-{
-	SDL_GL_DeleteContext(_glContext);
-	SDL_DestroyWindow(_window);
+	SDLDestroyWindow();
 	SDL_Quit();
+}
+
+bool Display::IsCloseRequested()
+{
+	return SDLGetIsCloseRequested();
 }
