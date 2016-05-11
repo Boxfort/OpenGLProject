@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Display.h"
 #include "Shader.h"
 #include "Texture.h"
@@ -5,10 +6,13 @@
 #include <GL/glew.h>
 #include "transform.h"
 #include "Camera.h"
+#include "Time.h"
 #include "Vertex.h"
+
 
 int main(int argc, char *argv[])
 {
+	/*
 	Display display("BoxEngine",800,600,false);
 	Shader shader("./res/basicShader");
 
@@ -44,9 +48,13 @@ int main(int argc, char *argv[])
 		shader.Update(transform, camera);
 		mesh.Draw();
 
-		display.Update();
+		display.SwapBuffers();
 		counter += 0.001f;
 	}
 	
+	return 0;
+	*/
+	std::cout << Time::GetTime() << std::endl;
+
 	return 0;
 }
