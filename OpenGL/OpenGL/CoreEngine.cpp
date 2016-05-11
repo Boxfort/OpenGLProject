@@ -1,15 +1,18 @@
 #include "CoreEngine.h"
 #include "Display.h"
+#include "Input.h"
 
 CoreEngine::CoreEngine(int width, int height, int frameRate)
 {
 	_isRunning = false;
-	_frameRate = frameRate;
+	_width = width;
+	_height = height;
+	_frameTime = 1.0 / frameRate;
 }
 
-void CoreEngine::CreateWindow(const char* title, int width, int height, bool fullscreen)
+void CoreEngine::CreateWindow(const char* title)
 {
-	_display.Create(title, width, height, fullscreen);
+	_display.Create(title, _width, _height, false);
 }
 
 void CoreEngine::Start()
@@ -39,8 +42,6 @@ void CoreEngine::Run()
 	unsigned int frames = 0;
 	unsigned int frameCounter = 0;
 
-	_frameTime = 1.0 / _frameRate;
-
 	double lastTime = Time::GetTime();
 	double unprocessedTime = 0;
 
@@ -52,7 +53,7 @@ void CoreEngine::Run()
 		double passedTime = startTime - lastTime;
 		lastTime = startTime;
 
-		unprocessedTime += passedTime / Time::SECOND;
+		unprocessedTime += passedTime;
 		frameCounter += passedTime;
 
 		while (unprocessedTime > _frameTime)
@@ -64,14 +65,15 @@ void CoreEngine::Run()
 			{
 				Stop();
 			}
-			//TODO: _INPUT::UPDATE();
+			Input::Update();
 
 			_game.Input();
 			_game.Update();
 
-			if (frameCounter >= Time::SECOND)
+			if (frameCounter >= 1.0)
 			{
 				std::cout << frames << std::endl;
+				frames = 0;
 				frameCounter = 0;
 			}
 		}

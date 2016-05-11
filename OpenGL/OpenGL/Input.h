@@ -359,9 +359,9 @@ public:
 
 	static void Update();
 
-	bool GetKey(int keyCode);
-	bool GetKeyDown(int keyCode);
-	bool GetKeyUp(int keyCode);
+	static bool GetKey(int keyCode);
+	static bool GetKeyDown(int keyCode);
+	static bool GetKeyUp(int keyCode);
 
 	~Input();
 protected:

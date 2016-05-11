@@ -8,6 +8,7 @@
 #include "Camera.h"
 #include "Time.h"
 #include "Vertex.h"
+#include "CoreEngine.h"
 
 
 int main(int argc, char *argv[])
@@ -54,7 +55,10 @@ int main(int argc, char *argv[])
 	
 	return 0;
 	*/
-	std::cout << Time::GetTime() << std::endl;
+	
+	CoreEngine CE(800, 600, 200);
+	CE.CreateWindow("BoxEngine");
+	CE.Start();
 
 	return 0;
 }

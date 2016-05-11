@@ -13,7 +13,7 @@ class CoreEngine
 public:
 	CoreEngine(int width, int height, int frameRate);
 
-	void CreateWindow(const char* title, int width, int height, bool fullscreen);
+	void CreateWindow(const char* title);
 	void Start();
 	void Stop();
 
@@ -21,9 +21,10 @@ public:
 protected:
 private:
 	bool _isRunning;
-	int _frameRate;
 	double _frameTime;
 	Display _display;
+	int _height;
+	int _width;
 	Game _game;
 	
 	void Run();
