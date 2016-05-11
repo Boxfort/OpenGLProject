@@ -64,7 +64,8 @@ void CoreEngine::Run()
 			{
 				Stop();
 			}
-			//TODO: Update Game
+			//TODO: _INPUT::UPDATE();
+
 			_game.Input();
 			_game.Update();
 
