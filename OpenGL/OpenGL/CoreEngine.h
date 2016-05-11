@@ -3,6 +3,7 @@
 
 #include "Display.h"
 #include "Time.h"
+#include "Game.h"
 #include <thread>
 #include <chrono>
 #include <iostream>
