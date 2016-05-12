@@ -96,4 +96,5 @@ void CoreEngine::Render()
 
 CoreEngine::~CoreEngine()
 {
+	Display::Dispose();
 }

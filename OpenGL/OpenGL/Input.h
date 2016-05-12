@@ -8,6 +8,15 @@ class Input
 public:
 	enum
 	{
+		LEFT_MOUSE = 1,
+		MIDDLE_MOUSE = 2,
+		RIGHT_MOUSE = 3,
+		MOUSE_WHEEL_UP = 4,
+		MOUSE_WHEEL_DOWN = 5
+	};
+
+	enum
+	{
 		KEY_UNKNOWN = 0,
 
 		/**
