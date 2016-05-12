@@ -2,6 +2,7 @@
 #define INPUT_H
 
 #include "SDL2\SDL.h"
+#include "math3d.h"
 
 class Input
 {
@@ -371,6 +372,15 @@ public:
 	static bool GetKey(int keyCode);
 	static bool GetKeyDown(int keyCode);
 	static bool GetKeyUp(int keyCode);
+
+	static bool GetMouse(int button);
+	static bool GetMouseDown(int button);
+	static bool GetMouseUp(int button);
+
+	static Vector2f GetMousePosition();
+
+	static void SetCursor(bool value);
+	static void SetMousePosition(Vector2f pos);
 
 	~Input();
 protected:
