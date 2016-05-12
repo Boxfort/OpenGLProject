@@ -65,9 +65,11 @@ void CoreEngine::Run()
 			{
 				Stop();
 			}
-			Input::Update();
 
 			_game.Input();
+
+			Input::Update();
+
 			_game.Update();
 
 			if (frameCounter >= 1.0)

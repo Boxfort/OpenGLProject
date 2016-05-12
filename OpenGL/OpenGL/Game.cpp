@@ -8,13 +8,9 @@ Game::Game()
 
 void Game::Input()
 {
-	if (Input::GetKeyDown(Input::KEY_UP))
+	if (Input::GetMouseDown(Input::LEFT_MOUSE))
 	{
-		std::cout << "Pressed up!" << std::endl;
-	}
-	if (Input::GetKeyUp(Input::KEY_UP))
-	{
-		std::cout << "Released up!" << std::endl;
+		std::cout << "Click!" << std::endl;
 	}
 }
 
