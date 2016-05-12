@@ -24,6 +24,12 @@ Input::Input()
 
 void Input::Update()
 {
+	for (int i = 0; i < NUM_MOUSEBUTTONS; i++)
+	{
+		downMouse[i] = false;
+		upMouse[i] = false;
+	}
+
 	for (int i = 0; i < NUM_KEYS; i++)
 	{
 		_downKeys[i] = false;
