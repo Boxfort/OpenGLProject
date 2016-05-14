@@ -108,9 +108,9 @@ bool Input::GetMouseUp(int button)
 	return upMouse[button];
 }
 
-Vector2f Input::GetMousePosition()
+glm::vec2 Input::GetMousePosition()
 {
-	Vector2f res((float)mouseX, (float)mouseY);
+	glm::vec2 res((float)mouseX, (float)mouseY);
 	return res;
 }
 
@@ -122,8 +122,8 @@ void Input::SetCursor(bool visible)
 		SDL_ShowCursor(0);
 }
 
-void Input::SetMousePosition(Vector2f pos)
+void Input::SetMousePosition(glm::vec2 pos)
 {
-	SDLSetMousePosition((int)pos.GetX(), (int)pos.GetY());
+	SDLSetMousePosition((int)pos.x, (int)pos.y);
 }
 

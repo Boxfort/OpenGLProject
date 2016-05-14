@@ -1,6 +1,7 @@
 #include "CoreEngine.h"
 #include "Display.h"
 #include "Input.h"
+#include "RenderUtil.h"
 
 CoreEngine::CoreEngine(int width, int height, int frameRate)
 {
@@ -13,6 +14,7 @@ CoreEngine::CoreEngine(int width, int height, int frameRate)
 void CoreEngine::CreateWindow(const char* title)
 {
 	_display.Create(title, _width, _height, false);
+	RenderUtil::InitGraphics();
 }
 
 void CoreEngine::Start()
@@ -81,6 +83,7 @@ void CoreEngine::Run()
 		}
 		if (render)
 		{
+			RenderUtil::ClearScreen();
 			_game.Render();
 			Render();
 		}

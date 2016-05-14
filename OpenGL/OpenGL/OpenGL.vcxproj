@@ -167,6 +167,7 @@
     <ClCompile Include="math3d.cpp" />
     <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="obj_loader.cpp" />
+    <ClCompile Include="RenderUtil.cpp" />
     <ClCompile Include="sdl_backend.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="Texture.cpp" />
@@ -182,6 +183,7 @@
     <ClInclude Include="math3d.h" />
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="obj_loader.h" />
+    <ClInclude Include="RenderUtil.h" />
     <ClInclude Include="sdl_backend.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="stb_image.h" />

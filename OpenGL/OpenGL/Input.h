@@ -2,7 +2,7 @@
 #define INPUT_H
 
 #include "SDL2\SDL.h"
-#include "math3d.h"
+#include "glm\glm.hpp"
 
 class Input
 {
@@ -377,10 +377,10 @@ public:
 	static bool GetMouseDown(int button);
 	static bool GetMouseUp(int button);
 
-	static Vector2f GetMousePosition();
+	static glm::vec2 GetMousePosition();
 
 	static void SetCursor(bool value);
-	static void SetMousePosition(Vector2f pos);
+	static void SetMousePosition(glm::vec2 pos);
 
 	~Input();
 protected:
